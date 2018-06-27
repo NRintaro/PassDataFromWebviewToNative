@@ -9,7 +9,8 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler {
+class ViewController: UIViewController, WKNavigationDelegate,
+  WKScriptMessageHandler, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
   var webView: WKWebView!
 
@@ -19,6 +20,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHan
     // javaScriptを呼び出し可能にするWKUserContentControllerクラスの生成
     let userController = WKUserContentController()
     userController.add(self, name: "callbackHandler")
+    userController.add(self, name: "showAlbum")
 
     // WKWebViewの設定を行う為のWKWebViewConfigurationクラスの生成
     let webConfiguration = WKWebViewConfiguration()
@@ -41,10 +43,37 @@ class ViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHan
   }
 
   // WKScriptMessageHandlerプロトコル
-  func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-    if (message.name == "callbackHandler") {
+  func userContentController(_ userContentController: WKUserContentController,
+                             didReceive message: WKScriptMessage) {
+
+    let actionName = message.name
+
+    switch actionName {
+    case "callbackHandler":
       print(message.body)
+
+    case "showAlbum":
+      print(message.body)
+      showAlbum()
+
+    default:
+      print("該当するアクションが存在しません.")
     }
+  }
+
+  func showAlbum() {
+    let sourceTypePhotoLibrary: UIImagePickerControllerSourceType
+      = UIImagePickerControllerSourceType.photoLibrary
+
+    guard UIImagePickerController.isSourceTypeAvailable(sourceTypePhotoLibrary) else {
+      print("カメラロールが利用できません.")
+      return
+    }
+
+    let cameraPicker = UIImagePickerController()
+    cameraPicker.sourceType = sourceTypePhotoLibrary
+    cameraPicker.delegate = self
+    self.present(cameraPicker, animated: true, completion: nil)
   }
 
   override func didReceiveMemoryWarning() {
