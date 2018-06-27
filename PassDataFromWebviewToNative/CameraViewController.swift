@@ -27,33 +27,55 @@ class CameraViewController: UIViewController,
 
   // カメラを起動する
   @IBAction func startUpCamera(_ sender: Any) {
+
     let sourceTypeCamera: UIImagePickerControllerSourceType
       = UIImagePickerControllerSourceType.camera
 
     // カメラが利用可能なら起動する
     if UIImagePickerController.isSourceTypeAvailable(sourceTypeCamera) {
+
       let cameraPicker = UIImagePickerController()
       cameraPicker.sourceType = sourceTypeCamera
       cameraPicker.delegate = self
       self.present(cameraPicker, animated: true, completion: nil)
     } else {
+
       label.text = "Can't use camera"
     }
   }
 
-  // 撮影が完了した時に呼ばれる
+  // カメラロールを起動する
+  @IBAction func showAlbum(_ sender: Any) {
+
+    let sourceTypePhotoLibrary: UIImagePickerControllerSourceType
+      = UIImagePickerControllerSourceType.photoLibrary
+
+    // カメラロールが利用可能なら起動する
+    if UIImagePickerController.isSourceTypeAvailable(sourceTypePhotoLibrary) {
+
+      let cameraPicker = UIImagePickerController()
+      cameraPicker.sourceType = sourceTypePhotoLibrary
+      cameraPicker.delegate = self
+      self.present(cameraPicker, animated: true, completion: nil)
+    } else {
+
+      label.text = "Can't use Album"
+    }
+  }
+
+  // 写真が選択された時に呼ばれる
   func imagePickerController(_ imagePicker: UIImagePickerController,
                              didFinishPickingMediaWithInfo info: [String: Any]) {
     if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+
       cameraView.contentMode = .scaleAspectFit
       cameraView.image = pickedImage
     }
-    // 閉じる処理
     imagePicker.dismiss(animated: true, completion: nil)
-    label.text = "Taked a picture"
+    label.text = "Choosed a picture"
   }
 
-  // 撮影がキャンセルされた時に呼ばれる
+  // 撮影または、アルバムがキャンセルされた時に呼ばれる
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     picker.dismiss(animated: true, completion: nil)
     label.text = "Canceled"
