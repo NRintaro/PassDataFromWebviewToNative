@@ -18,12 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOK-HX-BFG">
-                                <rect key="frame" x="219" y="617" width="140" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUK-Bk-qaD">
+                                <rect key="frame" x="34" y="573" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="WebViewを表示する"/>
+                                <state key="normal" title="Start Up Camera"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="aR5-gM-HLa"/>
+                                    <action selector="startUpCamera:" destination="rvi-d3-WTp" eventType="touchUpInside" id="15X-xu-X9q"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba2-Wi-Bhd">
@@ -45,12 +45,20 @@
                                     <action selector="showAlbum:" destination="rvi-d3-WTp" eventType="touchUpInside" id="fdV-lu-OFh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUK-Bk-qaD">
-                                <rect key="frame" x="34" y="573" width="115" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWY-Pr-H6Q">
+                                <rect key="frame" x="10" y="617" width="163" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start Up Camera"/>
+                                <state key="normal" title="iOSからWebへ値を渡す"/>
                                 <connections>
-                                    <action selector="startUpCamera:" destination="rvi-d3-WTp" eventType="touchUpInside" id="15X-xu-X9q"/>
+                                    <segue destination="VLn-UO-xBA" kind="presentation" id="iFw-s1-4fC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOK-HX-BFG">
+                                <rect key="frame" x="196" y="617" width="163" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="WebからiOSへ値を渡す"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="aR5-gM-HLa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -79,6 +87,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Pass Data Ios To Web View Controller-->
+        <scene sceneID="kyH-XG-KTc">
+            <objects>
+                <viewController id="VLn-UO-xBA" customClass="PassDataIosToWebViewController" customModule="PassDataFromWebviewToNative" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GaL-g3-Kue">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SyK-aW-DPV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O0o-bS-jis" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="814" y="446"/>
         </scene>
     </scenes>
 </document>

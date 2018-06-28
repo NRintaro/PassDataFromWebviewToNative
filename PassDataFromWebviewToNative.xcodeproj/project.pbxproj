@@ -13,6 +13,7 @@
 		0CCAF01B20E327BF00936BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CCAF01A20E327BF00936BD4 /* Assets.xcassets */; };
 		0CCAF01E20E327BF00936BD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CCAF01C20E327BF00936BD4 /* LaunchScreen.storyboard */; };
 		0CCAF02620E35F9200936BD4 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCAF02520E35F9200936BD4 /* CameraViewController.swift */; };
+		0CCAF02820E4846A00936BD4 /* PassDataIosToWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCAF02720E4846A00936BD4 /* PassDataIosToWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0CCAF01D20E327BF00936BD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CCAF01F20E327BF00936BD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CCAF02520E35F9200936BD4 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		0CCAF02720E4846A00936BD4 /* PassDataIosToWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDataIosToWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				0CCAF01320E327BF00936BD4 /* AppDelegate.swift */,
 				0CCAF01520E327BF00936BD4 /* ViewController.swift */,
 				0CCAF01720E327BF00936BD4 /* Main.storyboard */,
+				0CCAF02720E4846A00936BD4 /* PassDataIosToWebViewController.swift */,
 				0CCAF02520E35F9200936BD4 /* CameraViewController.swift */,
 				0CCAF01A20E327BF00936BD4 /* Assets.xcassets */,
 				0CCAF01C20E327BF00936BD4 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				0CCAF01620E327BF00936BD4 /* ViewController.swift in Sources */,
 				0CCAF01420E327BF00936BD4 /* AppDelegate.swift in Sources */,
 				0CCAF02620E35F9200936BD4 /* CameraViewController.swift in Sources */,
+				0CCAF02820E4846A00936BD4 /* PassDataIosToWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
