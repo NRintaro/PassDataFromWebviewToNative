@@ -38,8 +38,15 @@ class PassDataIosToWebViewController: UIViewController, WKNavigationDelegate {
     super.didReceiveMemoryWarning()
   }
 
+  // 「Webアプリに値を渡す」が押されたら、WebView側へname/passwordFiledのtextの値を送る
   @IBAction func passDataToWeb(_ sender: Any) {
-    print(nameField.text!)
-    print(passwordField.text!)
+    webView.evaluateJavaScript(
+      "document.getElementById('name').value = '\(nameField.text!)'",
+      completionHandler: nil
+    )
+    webView.evaluateJavaScript(
+      "document.getElementById('password').value = '\(passwordField.text!)'",
+      completionHandler: nil
+    )
   }
 }
