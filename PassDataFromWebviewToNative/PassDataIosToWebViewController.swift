@@ -3,6 +3,9 @@ import WebKit
 
 class PassDataIosToWebViewController: UIViewController, WKNavigationDelegate {
 
+  @IBOutlet weak var nameField: UITextField!
+  @IBOutlet weak var passwordField: UITextField!
+
   var webView: WKWebView!
 
   override func viewDidLoad() {
@@ -33,5 +36,10 @@ class PassDataIosToWebViewController: UIViewController, WKNavigationDelegate {
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+  }
+
+  @IBAction func passDataToWeb(_ sender: Any) {
+    print(nameField.text!)
+    print(passwordField.text!)
   }
 }
